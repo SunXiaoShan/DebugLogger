@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DebugLogger.h"
 
 @interface ViewController ()
 
@@ -19,5 +20,14 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)actionAddLog:(id)sender {
+    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+    NSString *logMessage = [NSString stringWithFormat:@"hello world - %f", timeStamp];
+    NSLog(@"%@", logMessage);
+}
+
+- (IBAction)actionExportLogFile:(id)sender {
+    [[DebugLogger sharedInstance] exportLogFile];
+}
 
 @end

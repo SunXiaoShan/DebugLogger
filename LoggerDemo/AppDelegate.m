@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "DebugLogger.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [DebugLogger sharedInstance];
+
     return YES;
 }
 
