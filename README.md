@@ -44,10 +44,11 @@ ViewController.m
 <br />
 
 ### ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Warning
-All of the log in the console will be disappear.<br />
+```
+All of the log in the console will be disappear.
 So, only enable it when you want to use it.
+```
 
-<br />
 <br />
 
 ### Demo
