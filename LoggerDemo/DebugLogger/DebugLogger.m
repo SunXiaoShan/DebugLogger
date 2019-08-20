@@ -45,6 +45,7 @@
 
 - (void)setupDDLog {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [dateFormatter setDateFormat:TIME_FORMAT];
     NSDate *date = [[NSDate alloc] init];
     NSString *fileName = [NSString stringWithFormat:@"%@.%@", [dateFormatter stringFromDate:date], LOG_EXTENSION]; // file name format: yyyy-MM-dd.log
@@ -95,6 +96,7 @@
 
 - (BOOL)isExpiredLogFile:(NSString *)filename {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [dateFormatter setDateFormat:TIME_FORMAT];
     NSDate *date = [dateFormatter dateFromString:filename];
 
@@ -131,6 +133,7 @@
 
 - (NSString *)getZipFilePath {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [dateFormatter setDateFormat:TIME_FORMAT];
     NSDate *date = [[NSDate alloc] init];
     NSString *fileName = [NSString stringWithFormat:@"/%@_%@", [dateFormatter stringFromDate:date], ZIP_FILE_SUFFIX];
